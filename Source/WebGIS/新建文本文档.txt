@@ -1,0 +1,16 @@
+//查询卡口数据
+    $.ajax({
+        url: "/Control/Gis/EquipmentData.ashx",
+        type: "Post",
+        async:false,
+        data: "type=2",
+        success: function (data) {
+            bayonets = data;
+            addBayonetClusters(bayonets);
+        },
+        error: function (d) {
+            if (d.status == 500) {
+                console.log("查询卡口数据失败！");
+            }
+        }
+    });

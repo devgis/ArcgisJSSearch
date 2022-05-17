@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--The viewport meta tag is used to improve the presentation and behavior of the samples 
+      on iOS devices-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>USA Map</title>
+    <link rel="stylesheet" href="http://localhost:8080/3.16/dijit/themes/tundra/tundra.css">
+    <!--<link rel="stylesheet" href="http://jsapi.thinkgis.cn/dijit/themes/tundra/tundra.css">-->
+    <link rel="stylesheet" href="http://localhost:8080/3.16/esri/css/esri.css">
+    <!--<link rel="stylesheet" href="https://js.arcgis.com/3.16/esri/css/esri.css">-->
+    <link rel="stylesheet" href="css/map.css">
+    <script src="http://localhost:8080/3.16/init.js"></script>
+    <!--<script src="https://js.arcgis.com/3.16/"></script>-->
+    <script src="js/jquery-1.7.2.js"></script>
+    <script src="js/gislib.js"></script>
+  </head>
+
+  <body>
+    <div id="map">
+      <input type="text" id="keywords" value="">
+      <input id="execute" type="button" value="关键字检索">
+      <label id="lbbianhao">战舰编号</label>
+      <select id="selbianhao">  
+        <option value="1">Volvo</option>  
+        <option value="2">Saab</option>  
+        <option value="3">Mercedes</option>  
+        <option value="4" title="Audi, your best choice!">Audi</option>  
+      </select>  
+      <label id="lbleixing">战舰类型</label>
+      <select id="sleixing">  
+        <option value="1">Volvo</option>  
+        <option value="2">Saab</option>  
+        <option value="3">Mercedes</option>  
+        <option value="4" title="Audi, your best choice!">Audi</option>  
+      </select>  
+      <label id="lbjibie">所属级别</label>
+      <select id="sjibie">  
+        <option value="1">Volvo</option>  
+        <option value="2">Saab</option>  
+        <option value="3">Mercedes</option>  
+        <option value="4" title="Audi, your best choice!">Audi</option>  
+      </select>  
+      <label id="lbnianfen">服役年份</label>
+      <select id="snianfen">  
+        <option value="1">Volvo</option>  
+        <option value="2">Saab</option>  
+        <option value="3">Mercedes</option>  
+        <option value="4" title="Audi, your best choice!">Audi</option>  
+      </select>
+      <input id="execute" type="button" value="多条件检索">
+    </div>
+  </body>
+</html>

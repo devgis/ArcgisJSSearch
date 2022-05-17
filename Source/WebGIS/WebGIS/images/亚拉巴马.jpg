@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>爱问共享资料404</title>
+<link rel="stylesheet" type="text/css" href="http://static2.iaskgo.com/v20160518/css/base.min.css">
+<link rel="stylesheet" type="text/css" href="http://static2.iaskgo.com/v20160518/css/style.min.css">
+</head>
+<body>
+<div class="header">
+	<div class="pw pw-v cf">
+		<a href="/" class="logo fl"><img src="http://static2.iaskgo.com/v20160518/images/logo.png"></a>
+	</div>
+</div>
+<div class="notfound-con">
+	<div class="pw">
+		<div class="notfound-img"></div>
+		<div class="notfound-footer">
+			<p>您也可以通过点击以下按钮获得您需要的信息</p>
+			<p class="mt30">
+				<a class="btn-notfound" href="javascript:history.back();"><i class="arrow-notfound"></i>返回之前页面</a>
+				<a class="btn-notfound" href="/">共享资料首页</a>
+				<a class="btn-notfound" href="/c/0.html">查看资源分类</a>
+			</p>
+		</div>
+	</div>
+</div>
+</body>
+</html>

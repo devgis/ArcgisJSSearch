@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGIS", "WebGIS\WebGIS.csproj", "{6317D751-D74D-46B4-AA38-AFEA0CCBFD39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGIS.Common", "WebGIS.Common\WebGIS.Common.csproj", "{A5621AA3-B680-454B-8379-33AEA0B2FB9E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6317D751-D74D-46B4-AA38-AFEA0CCBFD39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6317D751-D74D-46B4-AA38-AFEA0CCBFD39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6317D751-D74D-46B4-AA38-AFEA0CCBFD39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6317D751-D74D-46B4-AA38-AFEA0CCBFD39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5621AA3-B680-454B-8379-33AEA0B2FB9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5621AA3-B680-454B-8379-33AEA0B2FB9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5621AA3-B680-454B-8379-33AEA0B2FB9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5621AA3-B680-454B-8379-33AEA0B2FB9E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

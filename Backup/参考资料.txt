@@ -1,0 +1,33 @@
+要素鼠标移上去tooltip http://jshelp.thinkgis.cn/samples/fl_hover/
+
+http://jshelp.thinkgis.cn/samples/query_deferred_list/
+
+http://jshelp.thinkgis.cn/samples/featuretable/
+
+
+function openPostWindow(url, data, name)  
+ 2      {  
+ 3          var tempForm = document.createElement("form");  
+ 4          tempForm.id="tempForm1";  
+ 5          tempForm.method="post";  
+ 6          tempForm.action=url;  
+ 7          tempForm.target=name;  
+ 8          
+ 9          var hideInput = document.createElement("input");  
+10          hideInput.type="hidden";  
+11          hideInput.name= "content"
+12          hideInput.value= data;
+13          tempForm.appendChild(hideInput);   
+14          tempForm.attachEvent("onsubmit",function(){ openWindow(name); });
+15          document.body.appendChild(tempForm);  
+16          
+17          tempForm.fireEvent("onsubmit");
+18          tempForm.submit();
+19          document.body.removeChild(tempForm);
+20     }
+21     
+22      function openWindow(name)  
+23      {  
+24          window.open('about:blank',name,'height=400, width=400, top=0, left=0, toolbar=yes, menubar=yes, scrollbars=yes, resizable=yes,location=yes, status=yes');   
+25      }  
+26     </script>

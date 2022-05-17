@@ -1,0 +1,51 @@
+﻿html, body, #map {
+        height:100%;
+        width:100%;
+        margin:0;
+        padding:0;
+      }
+#map
+{
+position: relative;
+}
+      .dojoxColorPicker {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        -moz-box-shadow: 0 0 7px #888;
+        -webkit-box-shadow: 0 0 7px #888;
+        box-shadow: 0 0 7px #888;
+      }
+#map_ctrl{  
+    z-index: 99;  
+    position: absolute;  
+    top: 2pt;  
+    right: 20pt;    
+}  
+.button{  
+    padding: 3px 8px;  
+    background: #eee;  
+    text-align: center;  
+    font-size: 12px;  
+    font-family: "微软雅黑";  
+}  
+.button:hover,.attr_ctrl:hover{  
+    background: #ccc;  
+    cursor: pointer;  
+}
+div.insetType {
+        color: #97F900;
+        font-size: 24px;
+        font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
+        padding-left: 25px;
+      }
+
+ #info {
+        background: #fff;
+        box-shadow: 0 0 5px #888;
+        left: 1em;
+        padding: 0.5em;
+        position: absolute;
+        top: 1em;
+        z-index: 40;
+      }

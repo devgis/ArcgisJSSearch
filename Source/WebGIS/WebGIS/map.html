@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--The viewport meta tag is used to improve the presentation and behavior of the samples 
+      on iOS devices-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>USA Map</title>
+    <!--<link rel="stylesheet" href="http://192.168.0.106:6088/3.16/dijit/themes/tundra/tundra.css">-->
+    <link rel="stylesheet" href="http://localhost:8080/3.16/dijit/themes/tundra/tundra.css">
+    <!--<link rel="stylesheet" href="http://jsapi.thinkgis.cn/dijit/themes/tundra/tundra.css">-->
+    <!--<link rel="stylesheet" href="http://192.168.0.106:6088/3.16/esri/css/esri.css">-->
+    <link rel="stylesheet" href="http://localhost:8080/3.16/esri/css/esri.css">
+    <!--<link rel="stylesheet" href="https://js.arcgis.com/3.16/esri/css/esri.css">-->
+    <link rel="stylesheet" href="css/map.css">
+    <!--<script src="http://192.168.0.106:6088/3.16/init.js"></script>-->
+    <script src="http://localhost:8080/3.16/init.js"></script>
+    <!--<script src="https://js.arcgis.com/3.16/"></script>-->
+    <script src="js/jquery-1.7.2.js"></script>
+    <script src="js/gislib.js"></script>
+  </head>
+
+  <body>
+    <div id="map">
+      <input type="text" id="keywords" value="">
+      <input id="btKeySearch" type="button" value="关键字检索">
+      <label id="lbbianhao">战舰编号</label>
+      <select id="selbianhao">
+        <option value="全部">全部</option> 
+        <option value="BB55">BB55</option>  
+        <option value="BB56">BB56</option>  
+        <option value="BB57">BB57</option>
+        <option value="BB58">BB58</option>
+        <option value="BB59">BB59</option>
+        <option value="BB60">BB60</option>
+        <option value="BB61">BB61</option>
+        <option value="BB62">BB62</option>
+        <option value="BB63">BB63</option>
+        <option value="BB64">BB64</option>
+      </select>  
+      <label id="lbleixing">战舰类型</label>
+      <select id="sleixing">
+          <option value="全部">全部</option> 
+        <option value="BB">BB</option>
+      </select>  
+      <label id="lbjibie">所属级别</label>
+      <select id="sjibie">
+        <option value="全部">全部</option> 
+        <option value="北卡罗来纳">北卡罗来纳</option>
+        <option value="北卡罗来那">北卡罗来那</option>
+        <option value="南达科他">南达科他</option>
+        <option value="依阿华">依阿华</option>  
+      </select>  
+      <label id="lbnianfen">服役年份</label>
+      <select id="snianfen">
+        <option value="全部">全部</option> 
+        <option value="1941">1941</option>  
+        <option value="1942">1942</option>  
+        <option value="1943">1943</option>  
+        <option value="1944">1944</option>    
+      </select>
+      <input id="btMuiltSearch" type="button" value="多条件检索">
+    </div>
+  </body>
+</html>

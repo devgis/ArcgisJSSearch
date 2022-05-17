@@ -1,0 +1,4 @@
+F:\Demo\WebGIS\WebGIS.Common\bin\Debug\WebGIS.Common.dll
+F:\Demo\WebGIS\WebGIS.Common\bin\Debug\WebGIS.Common.pdb
+F:\Demo\WebGIS\WebGIS.Common\obj\Debug\WebGIS.Common.dll
+F:\Demo\WebGIS\WebGIS.Common\obj\Debug\WebGIS.Common.pdb

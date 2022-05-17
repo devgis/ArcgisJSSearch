@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <script src="js/tabulator.js" type="text/javascript"></script>
+        <script>
+       function GetQueryString(name)
+        {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null)return  unescape(r[2]); return null;
+        }
+        </script>
+        <style type="text/css">
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            #head {
+                height: 40px;
+                background-color: #6FD392;
+                width: 100%;
+                margin: 0;
+            }
+
+            #left {
+                top: 40px;
+                width: 300px;
+                height: 200px;
+                background: #CCCC66;
+                float: left;
+                margin: 0;
+            }
+
+            #content {
+                top: 40px;
+                width: 100%;
+                height: 200px;
+            }
+
+            #right {
+                width: 100%;
+                height: 100%;
+                background: #339966;
+                float: top;
+                margin: 0;
+            }
+
+            #foot {
+                position: absolute width:100%;
+                background: #FFFFFF;
+                height: 800px;
+                margin: 0;
+            }
+        </style>
+        <!--<link rel="stylesheet" href="http://192.168.0.106:6088/3.16/dijit/themes/tundra/tundra.css">-->
+        <link rel="stylesheet" href="http://localhost:8080/3.16/dijit/themes/tundra/tundra.css">
+        <!--<link rel="stylesheet" href="http://jsapi.thinkgis.cn/dijit/themes/tundra/tundra.css">-->
+        <!--<link rel="stylesheet" href="http://192.168.0.106:6088/3.16/esri/css/esri.css">-->
+        <link rel="stylesheet" href="http://localhost:8080/3.16/esri/css/esri.css">
+        <!--<link rel="stylesheet" href="https://js.arcgis.com/3.16/esri/css/esri.css">-->
+        <link rel="stylesheet" href="css/map.css">
+        <!--<script src="http://192.168.0.106:6088/3.16/init.js"></script>-->
+        <script src="http://localhost:8080/3.16/init.js"></script>
+        <!--<script src="https://js.arcgis.com/3.16/"></script>-->
+        <script src="js/jquery-1.7.2.js"></script>
+        <script src="js/gislib2.js"></script>
+    </head>
+
+    
+    <body>
+    
+        <div id="head">详细信息</div>
+        <div id="content">
+            <div id="left">left</div>
+            <div id="right">rigth</div>
+        </div>
+        <div id="foot"></div>
+        <script>
+
+        var id=unescape(GetQueryString('id'));
+        //alert(data);
+        //var obj=eval(data);
+            //alert(obj[0].name);
+
+       
+
+        //查询
+        $.ajax({
+            url: "QueryShip.ashx",
+            type: "Post",
+            async: false,
+            data: "data="+escape("舰名='" + id+"'"), //"1=1",
+            success: function (data) {
+                //alert(data);
+                //alert(data.length);
+                var arr = eval(data);
+                //alert(arr.length);
+                if (arr && arr.length > 0) {
+                    //$("#rstable").innerHTML = "cccccc";
+                    var htstring = "";
+                    htstring += "<em>舰名：" + arr[0].舰名 + "</em></br>";
+                    htstring += "<em>编号：" + arr[0].编号 + "</em></br>";
+                    htstring += "<em>所属级别：" + arr[0].所属级别 + "</em></br>";
+                    htstring += "<em>战舰类型：" + arr[0].战舰类型 + "</em></br>";
+                    htstring += "<em>所属国家：" + arr[0].所属国家 + "</em></br>";
+                    htstring += "<em>战舰简介：" + arr[0].战舰简介 + "</em></br>";
+                    document.getElementById("right").innerHTML = htstring;
+
+
+                    document.getElementById("left").innerHTML = "<img src=\"" + arr[0].图片 + "\" height=\"200\" width=\"300\"   alt=\"上海鲜花港 - 郁金香\" />";;
+                    
+                }
+                else {
+                    //$("#rstable").innerHTML = "查无此舰！";
+                    document.getElementById("right").innerHTML = "查无此舰！";
+                    
+                    var imgs = "<img src=\"/images/noimg.png\" height=\"200\" width=\"300\"   alt=\"上海鲜花港 - 郁金香\" />";
+                    document.getElementById("left").innerHTML = imgs;
+                }
+                return;
+            },
+            error: function (d) {
+                if (d.status == 500) {
+                    console.log("查询失败！");
+                }
+            }
+        });
+        </script>
+    </body>
+</html>

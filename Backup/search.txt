@@ -1,0 +1,45 @@
+//执行地图查询
+function searchMap(words) {
+    //实例化FindTask
+    findTask = new esri.tasks.FindTask(mapServiceUrl);
+    //FindTask的参数
+    findParams = new esri.tasks.FindParameters();
+    //返回Geometry
+    findParams.returnGeometry = true;
+    //查询的图层id
+    findParams.layerIds = [0, 1, 2,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23];
+    //查询字段
+    findParams.searchFields = ["BJECTID", "NAME", "PYNAME", "VADMINCODE", "ZIPCODE"];
+
+    findParams.searchText = words;
+    findTask.execute(findParams, showResults);
+}
+
+//显示findTask的结果
+function showResults(results) {
+    //清楚上一次的高亮显示
+    map.graphics.clear();
+    var dataForGrid = [];
+    for (var i = 0; i < results.length; i++) {
+        var curFeature = results[i];
+        var graphic = curFeature.feature;
+        //把查询到的对象的字段信息等插入到dataForGrid中
+        dataForGrid.push(graphic.attributes);
+        //根据类型设置显示样式
+        switch (graphic.geometry.type) {
+            case "point":
+                var symbol = new esri.symbol.SimpleMarkerSymbol(esri.symbol.SimpleMarkerSymbol.STYLE_SQUARE, 10, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new dojo.Color([255, 0, 0]), 1), new dojo.Color([0, 255, 0, 0.25]));
+                break;
+            case "polyline":
+                var symbol = new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_DASH, new dojo.Color([255, 0, 0]), 1);
+                break;
+            case "polygon":
+                var symbol = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_NONE, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_DASHDOT, new dojo.Color([255, 0, 0]), 2), new dojo.Color([255, 255, 0, 0.25]));
+                break;
+        }
+        //设置显示样式
+        graphic.setSymbol(symbol);
+        //添加到graphics进行高亮显示
+        map.graphics.add(graphic);
+    }
+}
